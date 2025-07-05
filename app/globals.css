@@ -73,6 +73,15 @@ body {
   min-width: 200px;
 }
 
+.hangman-canvas {
+  background: #f5f5dc;
+  border: 3px solid #8b4513;
+  border-radius: 0;
+  box-shadow: 2px 2px 0px #654321;
+  max-width: 300px;
+  max-height: 400px;
+}
+
 .word-display {
   font-size: 32px;
   font-weight: bold;

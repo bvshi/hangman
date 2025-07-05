@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import HangmanCanvas from './HangmanCanvas'
 
 const WORDS = [
   'PROGRAMOWANIE',
@@ -94,7 +95,7 @@ export default function HangmanGame() {
         </div>
         
         <div className="hangman-display">
-          {getHangmanDisplay(errors)}
+          <HangmanCanvas mistakes={errors} />
         </div>
       </div>
 
@@ -126,16 +127,3 @@ export default function HangmanGame() {
   )
 }
 
-function getHangmanDisplay(errors: number): string {
-  const hangmanStages = [
-    '',
-    '  +---+\n      |',
-    '  +---+\n  |   |',
-    '  +---+\n  |   |\n  O   |',
-    '  +---+\n  |   |\n  O   |\n  |   |',
-    '  +---+\n  |   |\n  O   |\n /|   |',
-    '  +---+\n  |   |\n  O   |\n /|\\  |\n /    |\n      |\n=========',
-  ]
-  
-  return hangmanStages[errors] || hangmanStages[hangmanStages.length - 1]
-}
